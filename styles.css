@@ -1,0 +1,223 @@
+:root {
+    --primary: #2563eb;
+    --primary-light: #3b82f6;
+    --success: #10b981;
+    --success-dark: #059669;
+    --text: #1f2937;
+    --text-light: #6b7280;
+    --background: #f8fafc;
+    --white: #ffffff;
+    --border: #e5e7eb;
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-color: var(--background);
+    color: var(--text);
+    line-height: 1.5;
+}
+
+header {
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
+    padding: 2rem 1.5rem;
+    margin-bottom: 2rem;
+    border-radius: 0 0 1.5rem 1.5rem;
+    box-shadow: var(--shadow-lg);
+}
+
+h1, h2, h3 {
+    color: var(--white);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+nav ul li a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    transition: all 0.2s ease-in-out;
+}
+
+nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+section {
+    background: var(--white);
+    padding: 1.5rem;
+    margin: 1rem auto;
+    border-radius: 1rem;
+    box-shadow: var(--shadow-md);
+    transition: all 0.3s ease;
+    max-width: 1200px;
+}
+
+section:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+h2 {
+    color: var(--text);
+    border-bottom: 2px solid var(--primary);
+    padding-bottom: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    margin: 1rem 0 0.5rem;
+    color: var(--text);
+    font-weight: 500;
+}
+
+input[type="number"],
+input[type="text"],
+select,
+textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 2px solid var(--border);
+    border-radius: 0.5rem;
+    background-color: var(--white);
+    transition: all 0.2s ease;
+    font-size: 1rem;
+}
+
+input[type="number"]:focus,
+input[type="text"]:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    outline: none;
+}
+
+button {
+    background-color: var(--success);
+    color: var(--white);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+button:hover {
+    background-color: var(--success-dark);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: 1.5rem 0;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+}
+
+th, td {
+    padding: 1rem;
+    text-align: left;
+    border: 1px solid var(--border);
+}
+
+th {
+    background-color: var(--primary);
+    color: var(--white);
+    font-weight: 600;
+}
+
+td {
+    background-color: var(--white);
+    transition: background-color 0.2s ease;
+}
+
+tr:hover td {
+    background-color: #f8fafc;
+}
+
+#forum-display,
+#portfolio-display {
+    display: grid;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+#forum-display div,
+#portfolio-display div {
+    background: var(--white);
+    padding: 1.25rem;
+    border-radius: 0.75rem;
+    border: 1px solid var(--border);
+    transition: all 0.2s ease;
+}
+
+#forum-display div:hover,
+#portfolio-display div:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+#resource-list ul {
+    list-style: none;
+    display: grid;
+    gap: 0.75rem;
+}
+
+#resource-list ul li {
+    padding: 0.5rem 0;
+}
+
+#resource-list a {
+    color: var(--primary);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.2s ease;
+}
+
+#resource-list a:hover {
+    color: var(--primary-light);
+    transform: translateX(4px);
+}
+
+@media (max-width: 768px) {
+    header {
+        border-radius: 0;
+    }
+    
+    section {
+        margin: 1rem;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+}

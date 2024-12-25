@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freelancer Rate Estimator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Freelancer Rate Estimator</h1>
+        <nav>
+            <ul>
+                <li><a href="#rate-estimator">Rate Estimator</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#forum">Community Forum</a></li>
+                <li><a href="#resources">Resources</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="rate-estimator">
+        <h2>Rate Estimator</h2>
+        <label for="experience">Experience (years):</label>
+        <input type="number" id="experience" min="0" value="0">
+        
+        <label for="skill-level">Skill Level:</label>
+        <select id="skill-level">
+            <option value="1">Beginner</option>
+            <option value="1.5">Intermediate</option>
+            <option value="2">Expert</option>
+        </select>
+        
+        <label for="project-type">Project Type:</label>
+        <select id="project-type">
+            <option value="1">Simple</option>
+            <option value="1.5">Moderate</option>
+            <option value="2">Complex</option>
+        </select>
+        
+        <button type="button" onclick="calculateRate()">Calculate Rate</button>
+        <p id="rate-display">$0.00</p>
+    </section>
+
+    <section id="portfolio">
+        <h2>Project Portfolio Showcase</h2>
+        <div id="portfolio-display"></div>
+        <input type="text" id="project-name" placeholder="Project Name">
+        <input type="text" id="project-url" placeholder="Project URL">
+        <button type="button" onclick="addProject()">Add Project</button>
+    </section>
+
+    <section id="forum">
+        <h2>Community Forum</h2>
+        <textarea id="forum-input" placeholder="Share your thoughts..."></textarea>
+        <button type="button" onclick="postToForum()">Post</button>
+        <div id="forum-display"></div>
+    </section>
+
+    <section id="resources">
+        <h2>Resources and Learning Hub</h2>
+        <div id="resource-list">
+            <ul>
+                <li><a href="https://www.freecodecamp.org/">FreeCodeCamp</a></li>
+                <li><a href="https://www.codecademy.com/">Codecademy</a></li>
+                <li><a href="https://developer.mozilla.org/">MDN Web Docs</a></li>
+            </ul>
+        </div>
+        <h3>Rate Negotiation Tips</h3>
+        <p>Be confident and clear about your value. Know your market rate!</p>
+    </section>
+
+    <button type="button" onclick="suggestProjects()">Get Project Suggestions</button>
+    <p id="project-suggestions"></p>
+
+    <section id="rate-comparison">
+        <h3>Rate Comparison</h3>
+        <table>
+            <tr>
+                <th>Skill Level</th>
+                <th>Standard Rate</th>
+                <th>Your Rate</th>
+            </tr>
+            <tr>
+                <td>Beginner</td>
+                <td>$10/hr</td>
+                <td id="your-beginner-rate">$0/hr</td>
+            </tr>
+            <tr>
+                <td>Intermediate</td>
+                <td>$20/hr</td>
+                <td id="your-intermediate-rate">$0/hr</td>
+            </tr>
+            <tr>
+                <td>Expert</td>
+                <td>$30/hr</td>
+                <td id="your-expert-rate">$0/hr</td>
+            </tr>
+        </table>
+    </section>
+
+    <label for="location">Location:</label>
+    <select id="location" onchange="adjustRateByLocation()">
+        <option value="1">Global Average</option>
+        <option value="1.2">North America</option>
+        <option value="0.8">Asia</option>
+    </select>
+
+    <script src="script.js"></script>
+</body>
+</html>
